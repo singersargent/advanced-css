@@ -57,7 +57,8 @@ header {
 }
 
 .heading-primary-main {
-   animation: moveInLeft 1s ease-in-out;
+   animation: moveInLeft 1s ease-in-out .5s;
+   animation-fill-mode: backwards;
    display: block;
    font-size: 60px;
    font-weight: 400;
@@ -65,7 +66,8 @@ header {
 }
 
 .heading-primary-sub {
-   animation: moveInRight 1s ease-in-out;
+   animation: moveInRight 1s ease-in-out 1.25s;
+   animation-fill-mode: backwards;
    display: block;
    font-size: 20px;
    font-weight: 700;
@@ -161,7 +163,7 @@ header {
 } */
 
 .btn-animated {
-   animation: moveInBottom .5s ease-out .75s;
+   animation: moveInBottom .5s ease-out 3s;
    animation-fill-mode: backwards;
 }
 
