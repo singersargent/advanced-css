@@ -1,27 +1,40 @@
-var gulp = require('gulp'),
-watch = require('gulp-watch'),
-browserSync = require('browser-sync').create();
+var gulp = require('gulp');
+var watch = require('gulp-watch');
+var cssnano = require('gulp-cssnano');
+var sass = require('gulp-sass');
+var rename = require('gulp-rename');
+var browserSync = require('browser-sync').create();
 
 
 gulp.task('watch', function() {
    browserSync.init({
       server: {
-         baseDir: "source"
+         baseDir: "app"
       }
    });
 
-   watch('./source/index.html', function() {
+   watch('./app/index.html', function() {
       browserSync.reload();
    });
 
-   watch('./source/css/style.css', function() {
+   watch('./app/sass/main.scss', function() {
+      compileSass();
       injectCSS();
    });
 
 });
 
+//inject CSS intro browser via browser sync
 function injectCSS() {
-   return gulp.src('./source/css/style.css')
+   return gulp.src('./app/css/style.css')
       .pipe(browserSync.stream());
 }
 
+//compile SCSS into style.css
+function compileSass() {
+   return gulp.src('app/sass/**/*.scss')
+   .pipe(sass().on('error', sass.logError))
+   .pipe(cssnano())
+   .pipe(rename('style.css'))
+   .pipe(gulp.dest('app/css'));
+}
