@@ -4,6 +4,7 @@ var cssnano = require('gulp-cssnano');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var browserSync = require('browser-sync').create();
+var autoprefixer = require('autoprefixer');
 
 
 gulp.task('watch', function() {

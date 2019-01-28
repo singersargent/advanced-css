@@ -31,3 +31,34 @@ body {
       letter-spacing: 1.75rem;
    }
 }
+
+.heading-secondary {
+   -webkit-background-clip: text;
+   background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+   color: transparent;
+   display: inline-block;
+   font-size: 3.5rem;
+   font-weight: 700;
+   letter-spacing: .2rem;
+   text-transform: uppercase;
+   transition: all .2s ease-in-out;
+
+   &:hover {
+      transform: skewY(2deg) skewX(15deg) scale(1.1);
+      text-shadow: .5rem 2.5rem 1.5rem rgba($color-black, .13);
+   }
+}
+
+.heading-tertiary {
+   font-size: $default-font-size;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+.paragraph {
+   font-size: $default-font-size;
+   
+   &:not(last-child) {
+      margin-bottom: 3rem;
+   }
+}
