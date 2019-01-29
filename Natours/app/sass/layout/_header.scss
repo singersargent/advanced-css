@@ -1,4 +1,6 @@
 .header {
+   -moz-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
    background-position: top;
    background-size: cover;
