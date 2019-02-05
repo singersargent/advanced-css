@@ -12,3 +12,13 @@
    left: 50%;
    transform: translate(-50%, -50%);
 }
+
+@mixin hidden {
+   opacity: 0;
+   visibility: hidden;
+}
+
+@mixin visible {
+   opacity: 1;
+   visibility: visible;
+}
