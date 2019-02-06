@@ -26,11 +26,27 @@
       transform: translate(-50%, -50%) scale(.1);
       transition: all .6s .3s;
       backface-visibility: hidden;
+
+      @include respond(tab-port) {
+         width: 90%;
+         display: block;
+      }
    }
 
    &__left {
       width: 33.333333333333%;
       display: table-cell;
+
+      @include respond(tab-port) {
+         width: 100%;
+
+         & > img {
+            width: 50%;
+            float: left;
+            height: 20rem;
+            overflow: hidden;
+         }
+      }
    }
 
    &__right {
@@ -60,6 +76,10 @@
       font-size: 1.4rem;
       hyphens: auto;
       margin-bottom: 4rem;
+
+      @include respond(phone) {
+         column-count: 1;
+      }
    }
 
    &:target &__content {

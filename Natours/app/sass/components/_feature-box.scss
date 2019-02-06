@@ -7,6 +7,10 @@
    text-align: center;
    transition: all .3s ease-in-out;
 
+   @include respond(tab-port) {
+      padding: 2.5rem;
+   }
+
    &__icon {
       -webkit-background-clip: text;
       background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
@@ -14,6 +18,10 @@
       display: inline-block;
       font-size: 6rem;
       margin-bottom: .5rem;
+
+      @include respond(tab-port) {
+         margin-bottom: 0;
+      }
    }
 
    &:hover {
