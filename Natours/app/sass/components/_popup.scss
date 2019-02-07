@@ -43,8 +43,9 @@
          & > img {
             width: 50%;
             float: left;
-            height: 20rem;
+            height: 25rem;
             overflow: hidden;
+            object-fit: cover;
          }
       }
    }
@@ -54,6 +55,11 @@
       display: table-cell;
       vertical-align: middle;
       padding: 3rem 5rem;
+
+      @include respond(tab-port) {
+         width: 100%;
+         display: block;
+      }
    }
 
    &__img {
