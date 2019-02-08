@@ -1,6 +1,6 @@
 .popup {
    @include hidden;
-   background-color: rgba($color-black, .85);
+   background-color: rgba($color-black, .8);
    height: 100vh;
    left: 0;
    position: fixed;
@@ -9,6 +9,14 @@
    z-index: 3000;
    transition: all .3s;
    backface-visibility: hidden;
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+
+   @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba($color-black, .3);
+   }
 
    &:target {
       @include visible;
